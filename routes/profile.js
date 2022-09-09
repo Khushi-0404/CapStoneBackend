@@ -41,4 +41,30 @@ router.post('/',(req,res,next)=>{
         res.status(500).json({error : err});
         });
 });
+
+
+router.post('/update',async(req,res,next)=>{
+    console.log("..................");
+    console.log("reqbody",req.body);
+    console.log("..................");
+    let user = req.body.user;
+    console.log("user.name",user.name);
+    const UpdateUser = await User.findById(user.id)
+    UpdateUser.name = user.name;
+    await UpdateUser.save();
+    console.log("oooooooooooo");
+    // User.findByIdAndUpdate(user.id,{
+    //     'name':user.name,
+    //     'resume':user.resume
+    // })
+    // .then((res)=>{
+    //     console.log("/////////////");
+    //     console.log(res);
+    // })
+    // .catch((err)=>{
+    //     console.log("...errr",err);
+    // })
+})
+
+
 module.exports = router;
