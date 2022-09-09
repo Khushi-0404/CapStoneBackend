@@ -29,6 +29,9 @@ const jobsSchema = mongoose.Schema({
     keywords:{
         type:Array,
         default:[]
+    },
+    status:{
+        type:Boolean
     }
     // location:{
     //     type:Boolean,
@@ -65,6 +68,9 @@ const savedJobsSchema = mongoose.Schema({
     keywords:{
         type:Array,
         default:[]
+    },
+    status:{
+        type:Boolean
     }
     // location:{
     //     type:Boolean,

@@ -92,7 +92,11 @@ const jobsSchema = mongoose.Schema({
     },
     location:{
         type:String
+    },
+    status:{
+        type:Boolean
     }
+
 });
 
 
